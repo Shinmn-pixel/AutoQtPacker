@@ -1,0 +1,127 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-G",
+                "MinGW Makefiles",
+                "-DCMAKE_PREFIX_PATH=D:/Qt/6.7.3",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-B",
+                "${workspaceFolder}/build",
+                "-S",
+                "${workspaceFolder}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "配置 CMake 项目"
+        },
+        {
+            "label": "CMake: Build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "构建 AutoQtPacker 项目",
+            "dependsOn": [
+                "CMake: Configure"
+            ]
+        },
+        {
+            "label": "CMake: Clean",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--target",
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "清理构建文件"
+        },
+        {
+            "label": "CMake: Rebuild",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--clean-first",
+                "--config",
+                "Release"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "重新构建项目",
+            "dependsOn": [
+                "CMake: Configure"
+            ]
+        },
+        {
+            "label": "Run AutoQtPacker",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/bin/AutoQtPacker.exe",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "test",
+            "problemMatcher": [],
+            "detail": "运行 AutoQtPacker 应用程序",
+            "dependsOn": [
+                "CMake: Build"
+            ]
+        },
+        {
+            "label": "Debug AutoQtPacker",
+            "type": "shell",
+            "command": "gdb",
+            "args": [
+                "${workspaceFolder}/build/bin/AutoQtPacker.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "test",
+            "problemMatcher": [],
+            "detail": "使用 GDB 调试 AutoQtPacker",
+            "dependsOn": [
+                "CMake: Build"
+            ]
+        }
+    ]
+}

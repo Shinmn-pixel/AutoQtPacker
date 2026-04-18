@@ -1,0 +1,13 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/icons">
+        <!-- 这些是占位符图标路径，实际使用时需要替换为真实的图标文件 -->
+        <file alias="start.png">icons/start.png</file>
+        <file alias="clear.png">icons/clear.png</file>
+        <file alias="exit.png">icons/exit.png</file>
+        <file alias="about.png">icons/about.png</file>
+    </qresource>
+    <qresource prefix="/styles">
+        <file alias="style.css">styles/style.css</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/Qt/6.7.3/include/**",
+                "D:/Qt/6.7.3/mingw_64/include/**",
+                "C:/MinGW/include/**",
+                "${workspaceFolder}/build",
+                "${workspaceFolder}/build/MyHealthTracker_autogen/include"
+            ],
+            "defines": [
+                "QT_CORE_LIB",
+                "QT_GUI_LIB",
+                "QT_WIDGETS_LIB",
+                "QT_CONCURRENT_LIB",
+                "UNICODE",
+                "_UNICODE",
+                "WIN32",
+                "_WIN32",
+                "QT_NO_DEBUG"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:/MinGW/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,13 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <!-- 移除了图标依赖，避免构建错误 -->
+    <!-- 如果需要图标，请创建 icons 目录并添加相应的 PNG 文件 -->
+    <!-- 
+    <qresource prefix="/icons">
+        <file alias="start.png">icons/start.png</file>
+        <file alias="clear.png">icons/clear.png</file>
+        <file alias="exit.png">icons/exit.png</file>
+        <file alias="about.png">icons/about.png</file>
+    </qresource>
+    -->
+</RCC>

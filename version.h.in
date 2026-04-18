@@ -1,0 +1,54 @@
+#ifndef AUTOQTPACKER_VERSION_H
+#define AUTOQTPACKER_VERSION_H
+
+// AutoQtPacker 版本信息
+// 此文件由 CMake 自动生成，请勿手动修改
+
+#define AUTOQTPACKER_VERSION_MAJOR @VERSION_MAJOR@
+#define AUTOQTPACKER_VERSION_MINOR @VERSION_MINOR@
+#define AUTOQTPACKER_VERSION_PATCH @VERSION_PATCH@
+#define AUTOQTPACKER_VERSION_STRING "@AUTOQTPACKER_VERSION@"
+
+#define AUTOQTPACKER_VERSION_CODE \
+    (AUTOQTPACKER_VERSION_MAJOR << 16) | \
+    (AUTOQTPACKER_VERSION_MINOR << 8) | \
+    AUTOQTPACKER_VERSION_PATCH
+
+// 版本信息结构
+struct AutoQtPackerVersion {
+    int major;
+    int minor;
+    int patch;
+    const char* string;
+};
+
+// 全局版本信息
+static const AutoQtPackerVersion AUTOQTPACKER_VERSION_INFO = {
+    AUTOQTPACKER_VERSION_MAJOR,
+    AUTOQTPACKER_VERSION_MINOR,
+    AUTOQTPACKER_VERSION_PATCH,
+    AUTOQTPACKER_VERSION_STRING
+};
+
+// 版本检查宏
+#define AUTOQTPACKER_CHECK_VERSION(major, minor, patch) \
+    (AUTOQTPACKER_VERSION_MAJOR > (major) || \
+    (AUTOQTPACKER_VERSION_MAJOR == (major) && AUTOQTPACKER_VERSION_MINOR > (minor)) || \
+    (AUTOQTPACKER_VERSION_MAJOR == (major) && AUTOQTPACKER_VERSION_MINOR == (minor) && AUTOQTPACKER_VERSION_PATCH >= (patch)))
+
+// 获取版本字符串
+inline const char* getAutoQtPackerVersionString() {
+    return AUTOQTPACKER_VERSION_STRING;
+}
+
+// 获取版本代码
+inline int getAutoQtPackerVersionCode() {
+    return AUTOQTPACKER_VERSION_CODE;
+}
+
+// 获取版本信息结构
+inline const AutoQtPackerVersion& getAutoQtPackerVersionInfo() {
+    return AUTOQTPACKER_VERSION_INFO;
+}
+
+#endif // AUTOQTPACKER_VERSION_H
